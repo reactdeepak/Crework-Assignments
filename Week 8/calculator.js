@@ -4,8 +4,15 @@ class Calculator {
     return exp;
   }
   expCalc(exp) {
-    
-    console.log(`Expression's evaluation is ${eval(exp)}`);
+    var result = eval(exp);
+    if (
+      result == Number.POSITIVE_INFINITY ||
+      result == Number.NEGATIVE_INFINITY
+    ) {
+      console.log("Number cant be divisible by zero");
+    } else {
+      console.log(`Expression's evaluation is ${result}`);
+    }
   }
   validator(exp) {
     if (/^(\d+[\+\-\*\/]{1})+\d+$/.test(exp)) {
